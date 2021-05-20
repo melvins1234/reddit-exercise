@@ -41,9 +41,7 @@ function loadDoc() {
     xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
         JSON.parse(this.response).data.children.forEach(element => {
-        let div = document.createElement('div'),
-            img = document.createElement('img'),
-            h1 = document.createElement('h1');
+        let div = document.createElement('div');
 
         div.classList.add("reddit__row");
         div.innerHTML = `<h1 class="reddit__title">${element.data.title}</h1> <img class="reddit__image" src="${element.data.thumbnail}">`
